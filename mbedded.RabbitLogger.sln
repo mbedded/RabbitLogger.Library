@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mbedded.RabbitLogger", "mbedded.RabbitLogger\mbedded.RabbitLogger.csproj", "{B35F739F-7262-41A8-B80D-A0B224BB4371}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mbedded.RabbitLogger", "mbedded.RabbitLogger\mbedded.RabbitLogger.csproj", "{B35F739F-7262-41A8-B80D-A0B224BB4371}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C2F9959-EE78-413B-9965-07184255316E}"
+	ProjectSection(SolutionItems) = preProject
+		Changelog.md = Changelog.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
