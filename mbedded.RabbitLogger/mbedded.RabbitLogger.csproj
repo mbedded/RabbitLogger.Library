@@ -5,7 +5,7 @@
     <Version>0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/mbedded/RabbitLogger.Library</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/mbedded/RabbitLogger.Library/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
