@@ -1,0 +1,8 @@
+version: 0.1.{build}
+clone_depth: 1
+build_script:
+- cmd: >-
+    dotnet restore
+
+    dotnet build
+

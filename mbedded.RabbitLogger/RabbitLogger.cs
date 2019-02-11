@@ -11,18 +11,19 @@ namespace mbedded.RabbitLogger {
     }
 
     public void Dispose() {
-      throw new System.NotImplementedException();
+      _client.Dispose();
+      //throw new System.NotImplementedException();
     }
 
-    public void Debug(string message) {
+    public void Debug(string xMessage) {
 
-      byte[] body = Encoding.UTF8.GetBytes(message);
-      
+      byte[] body = Encoding.UTF8.GetBytes(xMessage);
+
       // todo: same exchange as rabbit-client
-      _client.Channel.BasicPublish("logs","",
+      _client.Channel.BasicPublish("logs", "",
         false, null, body);
-      
-      throw new System.NotImplementedException();
+
+      //throw new System.NotImplementedException();
     }
 
   }
