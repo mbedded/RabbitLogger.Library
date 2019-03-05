@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using mbedded.RabbitLogger.Args;
+using mbedded.RabbitLogger.Models;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
@@ -8,8 +11,7 @@ namespace mbedded.RabbitLogger {
 
     public class RabbitReceiver {
 
-        // TODO 2019-02-11: Use EventArgs-Class
-        public event EventHandler<string> MessageReceived;
+        public event EventHandler<LogMessageReceivedEventArgs> MessageReceived;
 
         private readonly RabbitClient _client;
         private EventingBasicConsumer _consumer;
@@ -31,10 +33,12 @@ namespace mbedded.RabbitLogger {
         }
 
         private void ConsumerOnReceived(object xSender, BasicDeliverEventArgs xArgs) {
-            var body = xArgs.Body;
-            var message = Encoding.UTF8.GetString(body);
+            byte[] body = xArgs.Body;
+            string message = Encoding.UTF8.GetString(body);
 
-            MessageReceived?.Invoke(this, message);
+            LogMessage logMessage = JsonConvert.DeserializeObject<LogMessage>(message);
+
+            MessageReceived?.Invoke(this, new LogMessageReceivedEventArgs(logMessage));
         }
 
     }
