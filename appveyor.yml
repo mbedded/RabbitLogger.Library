@@ -5,4 +5,15 @@ build_script:
     dotnet restore
 
     dotnet build
-
+deploy:
+- provider: NuGet
+  api_key:
+    secure: GmRZiyrGLgUQl0OCm7C17yfq0y+F87B+RWcRCZoLIAI6sc4uUM6MNTAXWgNaQSba
+  skip_symbols: true
+notifications:
+- provider: Slack
+  incoming_webhook: https://hooks.slack.com/services/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
+  channel: '#builds'
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
