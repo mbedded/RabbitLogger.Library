@@ -6,6 +6,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/mbedded/RabbitLogger.Library</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>mbedded</Authors>
   </PropertyGroup>
 
   <ItemGroup>
